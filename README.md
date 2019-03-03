@@ -1,12 +1,15 @@
 # Block-matching based single model denoiser using Keras and TensorFlow
 
+### Meisam Rakhshanfar
+
+
 This is an implementation of block-matching CNN based image denoiser *BMCNN* using Python 3, Keras, and TensorFlow. 
 This work is similar to [IRCNN](https://arxiv.org/abs/1704.03264). 
 The differences are:
 1. Prior to denoising, a block matching algorithm searches for similar blocks. For each 4x4 block, 4 similar blocks are found. 
 Thus, an image with 5 channels (one original and 4 similar blocks) are fed into the network. 
 
-2. We use a lighter network. Since the block matching already does some of the processing we can use a simpler network with a fewer number of filters.
+2. Possibility to use a lighter network. Since the block matching already does some of the processing we can use a simpler network with a fewer number of filters (fs = 24).
 
 3. Unlike most of CNN based denoisers that for noise sigma specific weights are required, *BMCNN* uses single model (fixed weight) for all noise levels.
 
